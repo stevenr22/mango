@@ -8,7 +8,9 @@ body,html{
 	padding:0px;
 }
 
-
+th{
+	font-weight: bold;
+}
 /*==========================================================
   material-icon font-style
   ================================*/
@@ -59,9 +61,9 @@ body,html{
   
   
   
-  h1,h2,h3,h4,h5,h6,.h1,.21,.h3,.h4{
+  h1,h2,h3,h4,h5,h6,.h1,.h3,.h4{
 	   font-weight:400;
-	   line-height;1.5em;
+	
   }
   
   p{
@@ -265,7 +267,7 @@ overflow:auto;
 		  z-index:9;
 		  position:relative;
 		  padding:15px 30px;
-		  background-color:#353b48;
+		  background-color:#006400;
 	 }
 	 
 	 .xd-topbar{

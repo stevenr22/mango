@@ -18,12 +18,12 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         <div id="content">
             <?php include("../pages/partes/nav.php");?>
             <!--COLOCAR TABLA-->
-            <div class="container-fluid">
+            <div class="container-fluid"><br>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">EMPLEADOS REGISTRADOS</h1>
+                    <div class="col">
+                        <h3 class="page-header" style=" border-radius: 5px; font-weight:bold; color:black;">EMPLEADOS REGISTRADOS</h3>
                     </div>
-                </div>
+                </div><br>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -32,7 +32,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover datatable" id="dataTables-example">
-                                        <thead class="bg-warning">
+                                        <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nombre</th>
@@ -47,8 +47,10 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                     
 
                                             <?php
-                                                $sentencia = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
-                                                $respuesta = $conn->query($sentencia);
+                                                include("../conexion.php");
+
+                                                $senten = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
+                                                $respuesta = $conn->query($senten);
                                                 while ($arreglo = $respuesta->fetch_array()) {
                                                 ?>
 

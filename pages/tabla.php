@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,19 +43,28 @@
                                     <tbody>
                                   
 
-                                            <tr class="odd gradeX">
-                                                <td>1</td>
-                                                <td>Steven Galo</td>
-                                                <td>Rojas Guerrero</td>
-                                                <td>Srojas</td>
-                                                <td>Administrador</td>
-                                               
+                                    <?php
+                                    include("../conexion.php");
+                                            $sentencia = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
+                                            $respuesta = $conn->query($sentencia);
+                                            while ($arreglo = $respuesta->fetch_array()) {
+                                            ?>
 
-                                                <td class="center">
-                                                    <button type="button" class="btn btn-success" onclick="modalcito_aparece()">ACTUALIZAR</button>
-                                                    <button type="button" class="btn btn-danger">ELIMINAR</button>
-                                                </td>
-                                            </tr>
+                                                <tr class="odd gradeX">
+                                                    <td><?php echo $arreglo['id_usuario'] ?></td>
+                                                    <td><?php echo $arreglo['nombre'] ?></td>
+                                                    <td><?php echo $arreglo['apellido'] ?></td>
+                                                    <td><?php echo $arreglo['nomb_usuario'] ?></td>
+                                                    <td><?php echo $arreglo['Nombre_rol'] ?></td>
+
+
+                                                    <td class="center">
+                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['id_usuario']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['apellido']; ?>', '<?php echo $arreglo['nomb_usuario']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Id_rol']; ?>')">ACTUALIZAR</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['Id_rol']; ?>')">ELIMINAR</button>
+                                                    </td>
+                                                </tr>
+
+                                            <?php } ?>
 
                                 
 
