@@ -26,7 +26,7 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
     
     <?php
 }else{
-    $query = "SELECT * FROM usuario WHERE nomb_usuario = '$usu' OR contraseña = '$contra'";
+    $query = "SELECT * FROM usuario WHERE nomb_usuario = '$usu'";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) > 0) {
         // El usuario ya está registrado, muestra un mensaje de error o realiza alguna acción apropiada
