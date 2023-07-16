@@ -17,7 +17,10 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             <?php include("../pages/partes/menu.php");?>
         <div id="content">
             <?php include("../pages/partes/nav.php");?>
-            ASIGNAR ROL
+            <!--COLOCAR TABLA-->
+            
+
+
     </div>
 
     <script type="text/javascript">
