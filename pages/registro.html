@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="../images/mango-and-lef-png.ico"/>
 <!--===============================================================================================-->
@@ -52,12 +53,12 @@
 					
 					<div class="form-group">
 						<label for="nombre"><b>Nombres:</b> </label>
-						<input id="nombre" name="Nnombre" class="form-control" type="text" placeholder="Ingrese sus nombres">
+						<input id="nombre" name="Nnombre" class="form-control" onkeypress="return validarSOLOletras(event)"  type="text" placeholder="Ingrese sus nombres">
 					</div>
 
 					<div class="form-group">
 						<label for="apellido"><b>Apellidos:</b> </label>
-						<input id="apellido" name="Napellido" class="form-control" type="text" placeholder="Ingrese sus apellidos">
+						<input id="apellido" name="Napellido" class="form-control" onkeypress="return validarSOLOletras(event)" type="text" placeholder="Ingrese sus apellidos">
 					</div>
 
 
@@ -73,17 +74,32 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 
 <!--===============================================================================================-->
-	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+	
+
+
+
+
+
+
+
 <!--===============================================================================================-->
 	<script src="../vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 
 	<script src="../js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+	<script>
+		function validarSOLOletras(e){
+			let tecla = (document.all) ? e.keyCode : e.which; // 2
+			if (tecla==8) return true; // 3
+			let patron =/[A-Za-z\s]/; // 4
+			let te = String.fromCharCode(tecla); // 5
+			return patron.test(te); // 6
+		}
+	</script>
 </body>
 </html>
