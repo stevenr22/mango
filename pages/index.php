@@ -20,14 +20,12 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 <body>
     <div class="wrapper">
         <div class="body-overlay"></div>
-        <!--MENU IZQUIERDO-->
-        <?php include("../pages/partes/menu.php");
-         include("../pages/partes/nav.php");?>
-        
-        
-        
-
+            <?php include("../pages/partes/menu.php");?>
+        <div id="content">
+            <?php include("../pages/partes/nav.php");?>
+            INICIO
     </div>
+    
  
 
     <script type="text/javascript">

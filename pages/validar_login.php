@@ -8,12 +8,14 @@ $contra = $_POST["Ncontra"];
 
 $band = false;
 
-$sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario  as u , roles as r where (r.Id_rol=u.Id_rol)AND (u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo)";
+$sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol, u.nomb_usuario FROM usuario  as u , roles as r where (r.Id_rol=u.Id_rol)AND (u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo)";
 $respuesta = $conn->query($sentencia);
 while($fila = $respuesta->fetch_array()){
     $_SESSION['DBid'] = $fila['id_usuario'];
+    $_SESSION['DBusu'] = $fila['nomb_usuario'];
     $_SESSION['DBnombre'] = $fila['nombre'];
     $_SESSION['DBapellido'] = $fila['apellido'];
+    
     $_SESSION['rol'] = $fila['Nombre_rol'];
     $_SESSION['MensajeError'] = "";
     $_SESSION['MensajeExito'] = "";
