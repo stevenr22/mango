@@ -1,6 +1,6 @@
 <div id="sidebar">
     <div class="sidebar-header">
-        <h3><img src="" alt=""><span>Mango Production</span></h3>
+        <h3><img src="../images/mango-and-lef-png.ico" ><span><b>Mango Production</b></span></h3>
     </div>
     <ul class="list-unstyled component m-0">
         <li class="active">
