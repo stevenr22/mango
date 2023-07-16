@@ -26,7 +26,7 @@
 			
 			<div class="wrap-login100">
 				
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="validar_login.php">
 					
 
 					<span class="login100-form-title p-b-48">
@@ -38,7 +38,7 @@
 
 					<div class="form-group">
 						<label for="usuario"><b>Usuario:</b></label>
-						<input id="usuario" class="form-control" type="text" name="Nusu" placeholder="Ingrese su usuario">
+						<input id="usuario" class="form-control" type="text" name="Nusu" placeholder="Ingrese su usuario" >
 					</div>
 
 
@@ -47,11 +47,11 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="form-control" placeholder="Ingrese su contraseña" type="password" name="Ncontra">
+						<input class="form-control" placeholder="Ingrese su contraseña" type="password" name="Ncontra" >
 					</div>
 
 					<button type="submit" name="btn_ingreso" class="btn btn-success">Iniciar</button>
-					<a id="efecto" href="#">
+					<a id="efecto" href="../pages/registro.html">
 						<b>No tiene cuenta? Registrate</b>
 					</a>
 
@@ -71,6 +71,7 @@
 <!--===============================================================================================-->
 
 	<script src="../js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>

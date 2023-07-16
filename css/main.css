@@ -40,7 +40,7 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -120,7 +120,7 @@ ul, li {
   backdrop-filter: blur(50px);
   border-radius: 10px;
   overflow: hidden;
-  padding: 77px 55px 33px 55px;
+  padding: 50px 50px 50px 50px;
 
 
 }
