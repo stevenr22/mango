@@ -11,6 +11,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     <title>Crear rol</title>
     
     <?php include("partes/enlaces.php");?>
+
   
 </head>
 <body>
@@ -44,29 +45,73 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        include("../conexion.php");
-                        $sql = $conn->query("SELECT * FROM roles WHERE Activo=1");
-                        while($arreglo = $sql->fetch_array()){
-                        ?>
+                       
 
-                            <tr class="odd gradeX">
-                                <td><?php echo $arreglo['Nombre_rol'] ?></td>
-                                <td><?php echo $arreglo['Descripcion'] ?></td>
-                                <td class="center">
-                                    <div class="row">                
-                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ACTUALIZAR</button>
-                                        <div class="card"></div>
-                                        <button type="button" class="btn btn-danger" style="width: 100%;" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ELIMINAR</button>
-                                    </div>                       
-                                </td>
-                            </tr>
-                        <?php } ?>
+                    <?php
+                    include("../conexion.php");
+                                            $sql = $conn->query("SELECT * FROM roles WHERE Activo=1");
+                                            while($arreglo = $sql->fetch_array()){
+                                            ?>
+
+                                                <tr class="odd gradeX">
+                                                    <td><?php echo $arreglo['Nombre_rol'] ?></td>
+                                                    <td><?php echo $arreglo['Descripcion'] ?></td>
+                                                    <td class="center">
+                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ACTUALIZAR</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>')">ELIMINAR</button>
+                                                    </td>
+                                                </tr>
+
+                                            <?php } ?>
+                  
                     </tbody>
                 </table>         
             </div>
         </div>
     </div>
+
+
+
+    <div id="modalcito" class="modal" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <div class="modal-title">Actualizar rol</div>
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="post" action="EditRol.php" id="formito2">
+                    <input id="idRol" name="idRol" hidden>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input class="form-control" type="text" name="nombre" id="Enombre" placeholder="Ingrese el rol">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input class="form-control" type="text" name="des" id="Edes" placeholder="Ingrese la descripción">
+                        </div>
+
+                        
+
+                        <button type="submit" class="btn btn-success" onclick="modalcito_aparece()">Guardar Registro</button>
+                        <button type="reset" class="btn btn-info">Limpiar Datos</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" CLASS="btn btn-danger" data-dismiss="modal" onclick="modalcito_seesconde()">CERRAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         function modalcito_aparece(id, nom, des){
+                $("#modalcito").modal("show");
+                $("#Enombre").val(nom);
+                $("#idRol").val(id);
+                $("#Edes").val(des);
+                console.log($("#idRol").val())
+            }
+    </script>
     <!--***************************************************************-->
     <!--FORMULARIO PARA INGRESO DE NUEVOS ROLES-->
     <!--***************************************************************-->
@@ -103,7 +148,12 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         </div>
     </div>
     <!--***************************************************************-->
+    <!--MODAL-->
+    <!--***************************************************************-->
+    
+    <!--***************************************************************-->
     </div>
+    
     <script type="text/javascript">
         $(document).ready(function(){
            $(".xp-menubar").on('click',function(){
@@ -116,7 +166,13 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
            });
            
         });
+
+
+           
    </script>
+
+
+
     
 </body>
 </html>
