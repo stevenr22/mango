@@ -3,11 +3,9 @@ session_start();
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="../js/jquery.dataTables.min.js"></script>
-    <script src="../js/dataTables.bootstrap.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -104,22 +102,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 });
                 });
     </script>
-    <script>
-        
-         function modalcito_aparece(id, nom, ape, nom_usu, rol, idRol) {
-            $("#modalcito").modal("show");
-            
-            //$("#rol option:selected").val(idRol);
-        }
-
-
-        function modalcito_seesconde() {
-            $("#modalcito").modal("hide");
-        }
-
-        
-
-       
-    </script>
+  
 </body>
 </html>

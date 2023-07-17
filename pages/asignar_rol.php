@@ -5,8 +5,24 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../js/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+
     <?php include("partes/enlaces.php");?>
+
+ 
 
    
 
@@ -89,6 +105,30 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
 
     </div>
+    <script>
+    $(document).ready(function() {
+                $('.datatable').DataTable({
+				"language": {
+					"processing": "Procesando...",
+					"lengthMenu": "Mostrar _MENU_ registros",
+					"zeroRecords": "No se encontraron resultados",
+					"emptyTable": "Ningún dato disponible en esta tabla",
+					"info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+					"infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+					"infoFiltered": "(filtrado de un total de _MAX_ registros)",
+					"search": "Buscar:",
+					"infoThousands": ",",
+					"loadingRecords": "Cargando...",
+					"paginate": {
+						"first": "Primero",
+						"last": "Último",
+						"next": "Siguiente",
+						"previous": "Anterior"
+					},
+				}
+			});
+            });
+</script>
 
     <script type="text/javascript">
         $(document).ready(function(){

@@ -275,13 +275,7 @@ overflow:auto;
 		 position:relative;
 	 }
 	 
-	 input[type="search"]{
-		 background-color:#4a5263;
-		 color:#fff;
-		 padding-left:20px;
-		 border:none;
-		 border-radius:50px 0px 0px 50px;
-	 }
+	
 	 
 	 .input-group-append{
 		 margin-left:-1px;

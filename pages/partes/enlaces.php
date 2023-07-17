@@ -4,7 +4,23 @@
 
     <link rel="icon" type="image/png" href="../images/mango-and-lef-png.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<!--BOOTSTRAP CSS-->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+
+    <!--SCRIPT-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/metisMenu.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/dataTables.bootstrap4.min.css">
 
 <!--===============================================================================================-->
@@ -36,8 +52,8 @@
     <!--SCRIPTS-->
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
+
 
     <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/dataTables.bootstrap.min.js"></script>
