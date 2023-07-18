@@ -1,0 +1,22 @@
+.card-header{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #003400;
+    color: white;
+}
+#mi_titulo{
+    color: white;
+    background-color: #003400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card{
+    margin: 6px 0px 40px 0px;
+    width: 100%;
+    overflow: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0 0 0 / 5%);
+}
+.btn.btn-danger{
+    width: 100%;
+    
+}

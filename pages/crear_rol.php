@@ -11,6 +11,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     <title>Crear rol</title>
     
     <?php include("partes/enlaces.php");?>
+    <link rel="stylesheet" href="../css/misestilos.css">
+
 
   
 </head>
@@ -57,8 +59,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <td><?php echo $arreglo['Nombre_rol'] ?></td>
                                                     <td><?php echo $arreglo['Descripcion'] ?></td>
                                                     <td class="center">
-                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ACTUALIZAR</button>
-                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>')">ELIMINAR</button>
+                                                        <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">edit</i>Actualizar</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
                                                     </td>
                                                 </tr>
 
