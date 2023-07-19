@@ -223,6 +223,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                         </div>
                     </div>
+                </div>
                     <!---TERCERA COLUMNA-->
                     <div class="row">
                         <div class="col">
@@ -260,7 +261,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         </div>
                     </div>
                     
-                </div>
+                
             </div>
             <!--***************************************************************-->
 
