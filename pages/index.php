@@ -107,22 +107,26 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                     <!---PRIMERA COLUMNA-->
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Historia del mango</div>
+                            <div class="card-header text-center">Mango tipo: Keitt</div>
 
-                            <div class="card-body">
+                            <div class="card-body text-justify">
                                    <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                   Los mangos Keitt son de forma oblonga con una piel de color verde pálido a oscuro, 
+                                   aunque ocasionalmente tienen un rubor amarillo. El color puede ser engañoso y la única forma real 
+                                   de determinar si estos mangos grandes están maduros es al tacto.
                             </div>
                         </div>
                     </div>
                     <!---SEGUNDA COLUMNA-->
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Historia del mango</div>
+                            <div class="card-header text-center">Mango tipo: Ataulfo</div>
 
-                            <div class="card-body">
+                            <div class="card-body text-justify">
                                 <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                Este fruto se caracteriza por un dulce y refrescante sabor. Su composición promedio es de 69% de pulpa, 
+                                19% de cáscara y 8.5% de hueso o semilla.Es uno de los mangos favoritos por la gran cantidad de pulpa 
+                                que se obtiene de uno solo de sus frutos.
                             </div>
                         </div>
                     </div>
@@ -130,11 +134,14 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Historia del mango</div>
+                            <div class="card-header text-center">Mango tipo: Kent</div>
 
-                            <div class="card-body">
+                            <div class="card-body text-justify">
                                 <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                La carne de este mango es de consistencia media, sin fibras y color anaranjado mandarina. 
+                                Además, es muy bajo en calorías y contiene cantidades muy saludables de fibra dietética, vitaminas y 
+                                minerales. Tan sólo alrededor de 65 calorías y 2 gramos de fibra por cada 100 g de fruta.
+
                             </div>
                         </div>
                     </div>
@@ -142,9 +149,9 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Mango Tommy</div>
+                            <div class="card-header text-center">Mango tipo: Tommy Atkins</div>
                             <img src="images/mangotommy.jpg">
-                            <div class="card-body" justify>
+                            <div class="card-body text-justify" >
                                 <!-- Contenido de la primera tarjeta -->
                                 El mango Tommy tiene un equilibrio entre dulzura y aroma fresco y ácido. 
                                 Es muy valorado por su muy larga vida útil con un poco de magulladuras o 
