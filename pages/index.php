@@ -31,20 +31,34 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         <div class="card">
                             <div class="card-header">Historia del mango</div>
 
-                            <div class="card-body">
+                            <div class="card-body text-justify">
                                    <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                   <b>¿Quién no disfruta de un buen mango como postre rico y nutritivo?</b><br>
+                                   El mango procede originariamente del área indobirmana, probablemente cultivada por el hombre desde hace más de 4000 años.
+                                   India, donde todavía hoy crecen selvas de mangos silvestres, sigue siendo la zona de cultivo principal de esta planta. 
+                                   Los mangos se han extendido a casi todas las áreas tropicales: hacia el sur y sudeste de Asia, a Australia, Madagascar, al este de África, Brasil, y Centroamérica.
+                                   Crece también en zonas subtropicales de clima favorable como Florida, Sudáfrica, Israel, Chipre y Egipto.
+                                   El mango es el tercer fruto tropical en términos de producción e importación a nivel mundial, inmediatamente situado tras el plátano y la piña tropical 
+                                   y el quinto de todos los frutos.
                             </div>
                         </div>
                     </div>
                     <!---SEGUNDA COLUMNA-->
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Historia del mango</div>
+                            <div class="card-header">Beneficios</div>
 
-                            <div class="card-body">
+                            <div class="card-body text-justify">
                                 <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                Su textura agradable y su sabor dulce hace del mango una de las frutas más consumidas en todo el planeta. 
+                                Pero su atractivo no reside únicamente en lo gastronómico, sino también en sus aportes nutricionales y dietéticos:
+                                los mangos contienen más de 20 vitaminas y otros tantos minerales.<br>
+                                1. Previene el asma <br>
+                                2. Ofrece una ayuda contra el cáncer <br>
+                                3. Mejora la salud ocular <br>
+                                4. Protege los huesos <br>
+                                5. Especial para pacientes con enfermedades cardiacas
+            
                             </div>
                         </div>
                     </div>
@@ -89,6 +103,79 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                         <td>Mango de color rojo</td>
                                         <td>Venta al por mayor</td>
                                         <td>123$</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>China</td>
+                                        <td>Keitt</td>
+                                        <td>Mango de color verde</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>103$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>India</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>120$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>México</td>
+                                        <td>Atulfo</td>
+                                        <td>Mango de color amarillo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>150$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Malawi</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>200$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Tailandia</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>180$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Indonesia</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>150$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Egipto</td>
+                                        <td>Tommy Atkins</td>
+                                        <td>Mango de color rojizo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>220$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Pakistán</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>200$</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Brasil</td>
+                                        <td>Kanela</td>
+                                        <td>Mango de color rojo</td>
+                                        <td>Venta al por mayor</td>
+                                        <td>160$</td>
 
                                     </tr>
                                 </tbody>
@@ -150,7 +237,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                     <div class="col">
                         <div class="card">
                             <div class="card-header text-center">Mango tipo: Tommy Atkins</div>
-                            <img src="images/mangotommy.jpg">
+                            <img src="images/mangotommy.jpg" width="50" height="50">
                             <div class="card-body text-justify" >
                                 <!-- Contenido de la primera tarjeta -->
                                 El mango Tommy tiene un equilibrio entre dulzura y aroma fresco y ácido. 
