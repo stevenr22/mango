@@ -102,19 +102,56 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 </div>
 
                 <br>
-            <div class="row">
-                
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Tipos de mango</div>
+                <div class="main-content">
+                <div class="row">
+                    <!---PRIMERA COLUMNA-->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Historia del mango</div>
 
-                        <div class="card-body">
-                            <!-- Contenido de la primera tarjeta -->
-                            El mangodfsdf
+                            <div class="card-body">
+                                   <!-- Contenido de la primera tarjeta -->
+                                El mangodfsdf
+                            </div>
                         </div>
                     </div>
+                    <!---SEGUNDA COLUMNA-->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Historia del mango</div>
+
+                            <div class="card-body">
+                                <!-- Contenido de la primera tarjeta -->
+                                El mangodfsdf
+                            </div>
+                        </div>
+                    </div>
+                    <!---TERCERA COLUMNA-->
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Historia del mango</div>
+
+                            <div class="card-body">
+                                <!-- Contenido de la primera tarjeta -->
+                                El mangodfsdf
+                            </div>
+                        </div>
+                    </div>
+                    <!---CUARTA COLUMNA-->
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Historia del mango</div>
+
+                            <div class="card-body">
+                                <!-- Contenido de la primera tarjeta -->
+                                El mangodfsdf
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
             </div>
             <!--***************************************************************-->
 
