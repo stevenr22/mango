@@ -142,11 +142,15 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">Historia del mango</div>
-
+                            <div class="card-header">Mango Tommy</div>
+                            <img src="images/mangotommy.jpg">
                             <div class="card-body">
                                 <!-- Contenido de la primera tarjeta -->
-                                El mangodfsdf
+                                El mango Tommy tiene un equilibrio entre dulzura y aroma fresco y ácido. 
+                                Es muy valorado por su muy larga vida útil con un poco de magulladuras o 
+                                degradación durante el proceso de transporte. 
+                                Los mangos Tommy son frutas tropicales de tamaño mediano a grande y piel 
+                                de color rojo oscuro en forma ovalada.
                             </div>
                         </div>
                     </div>
