@@ -144,7 +144,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         <div class="card">
                             <div class="card-header">Mango Tommy</div>
                             <img src="images/mangotommy.jpg">
-                            <div class="card-body">
+                            <div class="card-body" justify>
                                 <!-- Contenido de la primera tarjeta -->
                                 El mango Tommy tiene un equilibrio entre dulzura y aroma fresco y ácido. 
                                 Es muy valorado por su muy larga vida útil con un poco de magulladuras o 
