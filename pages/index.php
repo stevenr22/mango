@@ -219,7 +219,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                 19% de cáscara y 8.5% de hueso o semilla.Es uno de los mangos favoritos por la gran cantidad de pulpa 
                                 que se obtiene de uno solo de sus frutos.
                             </div>
-                            <img src="../images/mangoataulfo.jpg" width="100%" height="100%">
+                            <img src="../images/mangoataulfo.png" width="100%" height="100%">
 
                         </div>
                     </div>
@@ -236,7 +236,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                     minerales. Tan sólo alrededor de 65 calorías y 2 gramos de fibra por cada 100 g de fruta.
 
                                 </div>
-                                <img src="#" width="100%" height="100%">
+                                <img src="../images/mangokent.png" width="100%" height="100%">
 
                             </div>
                         </div>
@@ -254,7 +254,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                     Los mangos Tommy son frutas tropicales de tamaño mediano a grande y piel 
                                     de color rojo oscuro en forma ovalada.
                                 </div>
-                                <img src="../images/mangotommy.jpg" width="100%" height="100%">
+                                <img src="../images/mangoTommy.png" width="100%" height="100%">
 
                             </div>
                         </div>
