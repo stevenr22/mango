@@ -3,10 +3,10 @@ session_start();
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <?php include("partes/enlaces.php");?>
-    <title>Insecticidas</title>
+    <title>Insumos</title>
 </head>
 <body>
     <div class="wrapper">
