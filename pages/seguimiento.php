@@ -65,7 +65,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         </div>
                     </div>
                 </div>
-                <!---PRIMERA COLUMNA GRAFICO DE PASTEL-->
+                <!---SEGUNDA COLUMNA GRAFICO DE PASTEL-->
                 <div class="col-md-6">
                        <div class="card">
                         <div class="card-header">Producción</div>

@@ -22,8 +22,8 @@
                 <i class="material-icons">border_color</i>Registros
             </a>
             <ul class="collapse list-unstyled menu" id="homeSubmenu5">
-                <li><a href="../pages/insecticidas.php">Insecticidas</a></li>
-                <li><a href="../pages/maquinaria.php">Maquinaria</a></li>
+                <li><a href="../pages/insumos.php">Insumos</a></li>
+               
             </ul>
         </li>
 
