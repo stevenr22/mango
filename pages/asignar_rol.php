@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 
     <?php include("partes/enlaces.php");?>
@@ -73,7 +73,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <?php } ?>
                         </tbody>
                     </table>
-
+                    
 
 
                           
@@ -81,7 +81,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             </div>
         </div>
     </div>
-    <!--***************************************************************-->
   
 
 

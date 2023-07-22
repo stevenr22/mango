@@ -6,6 +6,7 @@
 <!--===============================================================================================-->
 	<!--BOOTSTRAP CSS-->
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/all.min.css">
 
     <!--SCRIPT-->
     <script src="../js/jquery.min.js"></script>
@@ -13,6 +14,7 @@
     <script src="../js/metisMenu.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/dataTables.bootstrap.min.js"></script>
+
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -58,6 +60,7 @@
 
     <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/dataTables.bootstrap.min.js"></script>
+    
 
 	<link rel="stylesheet" type="text/css" href="../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
