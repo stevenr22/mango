@@ -692,19 +692,21 @@ background-color:rgba(0,0,0,0.09);
 	   
 	   /*-------modal-style start------*/
 	   .modal .modal-dialog{
-		   max-width:400px;
+		   max-width:600px;
 	   }
 	   .modal .modal-header, .modal .modal-body,.modal .modal-footer{
 		   padding:20px 30px;
 	   }
 	   .modal .modal-content{
-		   border-radius:3px;
+		   border-radius:10px;
+		   background-color: #f0f0f0;
+		   border: 2px solid #ccc;
+		 
+		   /* Agregar la sombra */
+		   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.121);
 	   }
 	   
-	   .modal .modal-footer{
-		   background:#ecf0f1;
-		   border-radius:0 0 3px 3px;
-	   }
+	
 	   
 	   .modal .modal-title{
 		   display:inline-block;
