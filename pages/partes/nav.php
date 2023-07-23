@@ -13,35 +13,7 @@
                  
                 </div>
 
-                <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
-                    <div class="xp-profilebar text-right">
-                        <nav class="navbar p-0">
-                            <ul class="nav navbar-nav flex-row ml-auto">
-                                <li class="dropdown nav-item">
-                                    <a href="#" class="nav-link" data-toggle="dropdown">
-                                        <img src="../images/usuario.png" style="width:30px; border-radius:40%;">
-                                        <span class="xp-user-live"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu small-menu">
-                                        <li>
-                                            <a href="../pages/perfil.php"><span class="material-icons">person_outline</span>
-                                            Perfíl
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="../pages/cerrar_sesion.php"><span class="material-icons">logout</span>
-                                            Cerrar sesión
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-
-                    </div>
-                </div>
+               
 
             </div>
 

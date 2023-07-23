@@ -7,7 +7,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 <head>
 
     <?php include("partes/enlaces.php");?>
-    <link rel="stylesheet" href="../css/misestilos.css">
 
     <title>Asignar rol</title>
 </head>
@@ -65,7 +64,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
 
                                     <td class="center">
-                                        <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">edit</i>Actualizar</button>
+                                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i  class="material-icons">edit</i>Actualizar</button>
                                         <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
                                     </td>
                                 </tr>
@@ -73,7 +72,62 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <?php } ?>
                         </tbody>
                     </table>
+                    <div class="container">
+  
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="asignar rol" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Asignar rol</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                                        <form role="form" method="post" action="editaris.php" id="formito2">
+                                            <input type="hidden" id="id_Emp" name="id_Emp">
+                                            <div class="form-group">
+                                                <label>Nombres</label>
+                                                <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="Valor no editable">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Apellidos</label>
+                                                <input class="form-control" type="text" name="Nape" id="Nape" readonly value="Valor no editable">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Nombre de usuario</label>
+                                                <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu" readonly value="Valor no editable">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Rol</label>
+                                                <select name="rol" id="rol" class="form-control" aria-label="Default select example">
+
+                                                </select>
+                                            </div>
+                                            <button type="button" onclick="UpdateRol()" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
+                                        </form>
+                                    </div>
+                                   
+
+
+                                    
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     
+                    </div>
 
 
                           
