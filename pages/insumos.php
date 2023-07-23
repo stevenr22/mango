@@ -16,6 +16,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             <?php include("../pages/partes/nav.php");?>
             <div class="main-content">
             <div class="row">
+
+
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header" style="background-color: #003400; color:white;">
@@ -24,7 +26,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form role="form" method="post" action="">
+                                        <form role="form" method="post" action="guardar_insecticidas.php">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -72,9 +74,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 </div>
                                             </div>
                                            
-                                           
-
-                                          
                                             <button type="submit" class="btn btn-success"> <i class="fa fa-paper-plane"></i> Guardar</button>
                                                             
                                         </form>
@@ -85,6 +84,11 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         </div>
                     </div>
                 </div>
+                <!--MODAL Insecticidas-->
+                
+
+
+                <!--************************************************************************************************************-->
                 <!--MAQUINARIA-->
                 <div class="row">
                     <div class="col-md-12">

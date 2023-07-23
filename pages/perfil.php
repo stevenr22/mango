@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   
     <?php include("partes/enlaces.php");?>
@@ -66,16 +66,16 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <button type="button" class="close" style="color: white;" data-dismiss="modal">&times;</button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form role="form" method="post"  id="formito2">
+                                                    <form role="form" method="post" action="actualizar_perfil.php"  id="formito2">
                                                         <input type="hidden" id="id_Emp" name="id_Emp">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
-                                                            <input class="form-control" type="text" name="Nnom" id="Nnom" value="<?php echo $_SESSION['DBnombre'];?>">
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nnom" id="Nnom" value="<?php echo $_SESSION['DBnombre'];?>">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Apellidos</label>
-                                                            <input class="form-control" type="text" name="Nape" id="Nape" value="<?php echo $_SESSION['DBapellido'];?>">
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nape" id="Nape" value="<?php echo $_SESSION['DBapellido'];?>">
                                                         </div>
 
                                                         <div class="form-group">
@@ -88,7 +88,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                                 <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $_SESSION['rol'];?>">
 
                                                         </div>
-                                                        <button type="button" onclick="UpdateRol()" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
@@ -134,6 +134,14 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             function modalcito_seesconde() {
                 $("#modalcito").modal("hide");
             }
+
+            function validarSOLOletras(e){
+                let tecla = (document.all) ? e.keyCode : e.which; // 2
+                if (tecla==8) return true; // 3
+                let patron =/[A-Za-z\s]/; // 4
+                let te = String.fromCharCode(tecla); // 5
+                return patron.test(te); // 6
+		    }
    </script>
     
  
