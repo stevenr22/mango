@@ -66,7 +66,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <button type="button" class="close" style="color: white;" data-dismiss="modal">&times;</button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form role="form" method="post" action="actualizar_perfil.php"  id="formito2">
+                                                    <form role="form" method="post"   id="formito2">
                                                         <input type="hidden" id="id_Emp" name="id_Emp">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
@@ -88,7 +88,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                                 <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $_SESSION['rol'];?>">
 
                                                         </div>
-                                                        <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
+                                                        <button type="submit" onclick="actualizarDatos()" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
@@ -109,6 +109,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     </div>
     <!--***************************************************************-->
     </div>
+
     <script type="text/javascript">
         $(document).ready(function(){
            $(".xp-menubar").on('click',function(){
@@ -142,6 +143,39 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 let te = String.fromCharCode(tecla); // 5
                 return patron.test(te); // 6
 		    }
+
+
+
+            function actualizarDatos() {
+                // Obtén los datos del formulario que deseas actualizar
+                var data = {
+                    nom: $('#Nnom').val(),
+                    ape: $('#Nape').val(),
+                    nomb_usu: $('#Nnom_usu').val(),
+                  
+                };
+
+                // Envía los datos mediante AJAX al script de actualización en el servidor
+                $.ajax({
+                    type: "POST",
+                    url: "../pages/actualizar_perfil.php",
+                    data: formData,
+                    success: function(response) {
+                        if (response.success) {
+                            swal.fire("Actualización exitosa", response.message, "success").then((result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            ocation.reload();
+                        });
+                        } else {
+                            swal.fire("Error", "Error: " + response.message, "error");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja los errores en caso de que ocurra algún problema durante la actualización
+                        console.error(error);
+                    }
+                });
+            }
    </script>
     
  
