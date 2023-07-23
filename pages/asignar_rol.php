@@ -80,8 +80,6 @@ if($_SESSION['idrol']==2){
                             </tbody>
                         </table>
                         <div class="container">
-
-
                             <!-- The Modal -->
                             <div class="modal fade" aria-hidden="true" tabindex="-1" role="dialog" id="modalcito">
                                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -137,6 +135,17 @@ if($_SESSION['idrol']==2){
 
 
         <script type="text/javascript">
+             $(document).ready(function(){
+           $(".xp-menubar").on('click',function(){
+             $("#sidebar").toggleClass('active');
+             $("#content").toggleClass('active');
+           });
+           
+           $('.xp-menubar,.body-overlay').on('click',function(){
+              $("#sidebar,.body-overlay").toggleClass('show-nav');
+           });
+           
+        });
             function UpdateRol() {
                 let id_emp = $("#id_Emp").val();
                 let id_rol = $("#rol option:selected").val();

@@ -57,15 +57,6 @@
         <?php
         }
         ?>     
-        <li class="dropdown">
-            <a href="#homeSubmenu9" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="material-icons">manage_accounts</i>Perfil
-              
-            </a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu9">
-                <li><a href="../pages/perfil.php">Perfil</a></li>
-               
-            </ul>
-        </li>     
+       
     </ul>
 </div>
