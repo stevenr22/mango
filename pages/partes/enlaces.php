@@ -23,7 +23,7 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/dataTables.bootstrap4.min.css">
+<!--     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/dataTables.bootstrap4.min.css"> -->
  
 
 <!--===============================================================================================-->
@@ -31,13 +31,13 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!-- <script src="../vendor/jquery/jquery-3.2.1.min.js"></script> -->
 <!--===============================================================================================-->
 	<script src="../vendor/animsition/js/animsition.min.js"></script>
 
 
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
     <!----css3---->
     <link rel="stylesheet" href="../css/custom.css">
     
@@ -53,7 +53,7 @@
  
 
     <!--SCRIPTS-->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+ <!--    <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../vendor/bootstrap/js/popper.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
 
@@ -66,7 +66,7 @@
     
 
 	<link rel="stylesheet" type="text/css" href="../css/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css"> -->
 
 
     

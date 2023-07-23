@@ -8,7 +8,7 @@ $contra = $_POST["Ncontra"];
 
 $band = false;
 
-$sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol, u.nomb_usuario FROM usuario  as u , roles as r where (r.Id_rol=u.Id_rol)AND (u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo)";
+$sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol,r.Id_rol, u.nomb_usuario FROM usuario  as u , roles as r where (r.Id_rol=u.Id_rol)AND (u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo)";
 $respuesta = $conn->query($sentencia);
 while($fila = $respuesta->fetch_array()){
     $_SESSION['DBid'] = $fila['id_usuario'];
@@ -17,6 +17,7 @@ while($fila = $respuesta->fetch_array()){
     $_SESSION['DBapellido'] = $fila['apellido'];
     
     $_SESSION['rol'] = $fila['Nombre_rol'];
+    $_SESSION['idrol'] = $fila['Id_rol'];
     $_SESSION['MensajeError'] = "";
     $_SESSION['MensajeExito'] = "";
 
@@ -33,6 +34,7 @@ elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN V
     <script>
         Swal.fire({
         title: "CAMPOS VACIOS!",
+        html: 'Rellene todos los campos!',
         icon: 'warning'
     })
     </script>
@@ -47,6 +49,7 @@ elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN V
     <script>
         Swal.fire({
         title: "DATOS INCORRECTOS!",
+        html: 'El usuario o contraseña no son correctos, intente nuevamente',
         icon: 'error'
     })
     </script>
