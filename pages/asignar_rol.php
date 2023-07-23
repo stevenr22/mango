@@ -64,7 +64,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
 
                                     <td class="center">
-                                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i  class="material-icons">edit</i>Actualizar</button>
+                                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal" ><i  class="material-icons">edit</i>Actualizar</button>
                                         <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
                                     </td>
                                 </tr>
@@ -81,33 +81,36 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                 <div class="modal-content">
                                 
                                     <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Asignar rol</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <div class="modal-header" style="background-color: #003400;">
+                                        <h4 class="modal-title" style="color:white;">Asignar rol</h4>
+                                        <button type="button" class="close" style="color: white;" data-dismiss="modal">&times;</button>
                                     </div>
                                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                                        <form role="form" method="post" action="editaris.php" id="formito2">
-                                            <input type="hidden" id="id_Emp" name="id_Emp">
+                                        <form role="form" method="post" action="editar.php">
+                                         
                                             <div class="form-group">
-                                                <label>Nombres</label>
-                                                <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="Valor no editable">
+                                                <label><b>Nombres:</b> </label>
+                                                <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="<?php echo $_SESSION['DBnombre']?>">
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Apellidos</label>
-                                                <input class="form-control" type="text" name="Nape" id="Nape" readonly value="Valor no editable">
+                                                <label><b>Apellido</b>s: </label>
+                                                <input class="form-control" type="text" name="Nape" id="Nape" readonly value="<?php echo $_SESSION['DBapellido']?>">
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Nombre de usuario</label>
-                                                <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu" readonly value="Valor no editable">
+                                                <label><b>Nombre de usuario:</b> </label>
+                                                <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu" readonly value="<?php echo $_SESSION['DBusu']?>">
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Rol</label>
-                                                <select name="rol" id="rol" class="form-control" aria-label="Default select example">
+                                                <label><b>Rol: </b></label>
+                                                <select name="rol" id="rol" class="form-control chzn-select" aria-label="Default select example">
+                                                    <option value="1">Gerente</option>
+                                                    <option value="2">Administrador</option>
+                                                    <option value="3">Empleado</option>
 
                                                 </select>
                                             </div>
