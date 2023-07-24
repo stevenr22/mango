@@ -265,7 +265,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                         </select>
                                                         <div id="campoPersonalizado" style="display: none;">
                                                             <label><b>Elegir estado especial del mango: </b></label>
-                                                            <input type="text" class="form-control" name="estadoPersonalizado" id="inputPersonalizado" required>
+                                                            <input type="text" class="form-control" name="estadoPersonalizado" id="inputPersonalizado">
                                                         </div>                                             
                                                     </div>
                                                 </div>

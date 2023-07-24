@@ -67,7 +67,4 @@ if ($est === 'opcion_personalizada') {
 
 }
 
-
-
-
 ?>
