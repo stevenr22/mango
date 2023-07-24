@@ -8,7 +8,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
   
     <?php include("partes/enlaces.php");?>
     <script src="../js/misfunciones.js"></script>
-    <title>Perfíl</title>
+    <title>Perfil</title>
 </head>
 <body>
 <div class="wrapper">
@@ -22,47 +22,40 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" style="background-color: #003400; color:white;">
-                        <b>PERFÍL</b>
+                        <b>Perfil</b>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">
                             
                                 <form role="form" method="post" id="formito">
-                                <?php include("../conexion.php");
-                                $sql = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
-                                $resul=mysqli_query($conn,$sql);
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['DBid']; ?>">
 
-                                while($ver=mysqli_fetch_row($resul)){
-                                                
-                                //0 = id, 1=nombreusuario, 2=nombre, 3=apellido, 4=rol
-                                $datos=$ver[0]."/".$ver[1]."/".$ver[2]."/".$ver[3]."/".$ver[4];
-                                               
-                                }
-                                ?>
+                               
                                     
                                     <div class="form-group">
                                         <div class="form-group">
+                                            
                                         
                                             <label><b>Nombres</b></label>
-                                            <input class="form-control" type="text" name="Nnom" id="Nnom"readonly value="<?php echo $ver[2];?>">
+                                            <input class="form-control" type="text" name="Nnom" id="Nnom"readonly value="<?php echo $_SESSION['DBnombre'];?>">
                                         </div>
 
                                         <div class="form-group">
                                             <label><b>Apellidos</b></label>
-                                            <input class="form-control" type="text" name="Nape" id="Nape"readonly value="<?php echo $ver[3];?>" >
+                                            <input class="form-control" type="text" name="Nape" id="Nape"readonly value="<?php echo $_SESSION['DBapellido'];?>" >
                                         </div>
 
                                         <div class="form-group">
                                             <label><b>Nombre de usuario</b></label>
-                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu"readonly value="<?php $ver[1];?>">
+                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu"readonly value="<?php echo $_SESSION['DBusu'];?>">
                                         </div>
 
                                 
 
                                         <div class="form-group">
                                             <label><b>Rol</b></label>
-                                            <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $ver[4];?>">
+                                            <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $_SESSION['rol'];?>">
                                         </div>
 
                                       
@@ -71,8 +64,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                         onclick="mostrardatos('<?php echo $datos?>')">Editar</button>
                                     </div>
                                 </form>
-
-
+                                
+                           
 
                                 <div class="container">
                                     <!-- The Modal PARA Actualizar-->
@@ -87,29 +80,29 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 </div>
                                                
                                                 <div class="modal-body">
-                                                    <form role="form" method="post"   id="formito2">
-                                                        <input type="hidden" id="id_Emp" name="id_Emp">
+                                                    <form role="form" method="post" action="../pages/actualizar_perfil.php"  id="formito2">
+                                                    <input type="hidden" name="id" value="<?php echo $_SESSION['DBid']; ?>">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
-                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nnom" id="NnomE" >
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nnom" id="NnomE" value="<?php echo $_SESSION['DBnombre'];?>" >
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Apellidos</label>
-                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nape" id="NapeE" >
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nape" id="NapeE" value="<?php echo $_SESSION['DBapellido'];?>">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Nombre de usuario</label>
-                                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usuE">
+                                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usuE" value="<?php echo $_SESSION['DBusu'];?>">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Rol</label>
-                                                                <input class="form-control" type="text" name="Nrol" id="NrolE"readonly >
+                                                                <input class="form-control" type="text" name="Nrol" id="NrolE"readonly value="<?php echo $_SESSION['rol'];?>">
 
                                                         </div>
-                                                        <button type="submit" id="guardarnuevo" class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
+                                                        <button type="submit" id="actualizadatos" on class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
@@ -143,19 +136,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
            
         });
 
-        
-
-        /*
-        function modalcito_aparece(id, nom, ape, nom_usu, rol, idRol) {
-                $("#modalcito").modal("show");
-                $("#id_Emp").val(id);
-                $("#Nnom").val(nom);
-                $("#Nape").val(ape);
-                $("#Nnom_usu").val(nom_usu);
-                cargarRoles(idRol)
-                //$("#rol option:selected").val(idRol);
-            }*/
-          
             function modalcito_seesconde() {
                 $("#modalcito").modal("hide");
             }
@@ -168,9 +148,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 return patron.test(te); // 6
 		    }
 
-
-
-            
    </script>
     
  

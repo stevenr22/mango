@@ -1,26 +1,37 @@
 <?php
+// Paso 1: Establecer la conexión a la base de datos
 include("../conexion.php");
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the data from the form
-  
-    $nom = $_POST["Nnom"];
-    $ape = $_POST["Nape"];
-    $nom_usu = $_POST["Nnom_usu"];
 
-   
+// Paso 2: Obtener datos del formulario (suponiendo que el formulario tiene un campo 'id' para identificar el registro a actualizar)
+if (isset($_POST['id']) && isset($_POST['Nnom']) && isset($_POST['Nape'])) {
+    $id = $_POST['id'];
+    $Nnom = $_POST['Nnom'];
+    $Nape = $_POST['Nape'];
 
-    // Update user information
-    $update_user_sql = "UPDATE usuario SET nombre='$nom', apellido='$ape', nomb_usuario='$nom_usu' WHERE nomb_usuario='$nom_usu'";
-    if ($conn->query($update_user_sql) === TRUE) {
-        echo "correcto";
+    // Paso 3: Actualizar los datos en la base de datos
+    $sql = "UPDATE usuario SET nombre='$Nnom', apellido='$Nape' WHERE id_usuario=$id";
+
+    if ($conn->query($sql) === TRUE) {
+        ?>
+        <?php
+        include("perfil.php");
+        ?>
+        <script>
+            Swal.fire({
+            title: "DATOS ACTUALIZADOS CORRECTAMENTE!",
+            icon: 'success'
+        }).then(function() {
+        // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+        window.location.href = "../pages/perfil.php";
+        });
+        </script>
+            
+        <?php
     } else {
-        echo "Error updating user information: " . $conn->error;
+        echo"ERROR";
     }
-
-    
-
-    // Close the database connection
-    $conn->close();
 }
+
+// Paso 4: Cerrar la conexión a la base de datos
+$conn->close();
 ?>
