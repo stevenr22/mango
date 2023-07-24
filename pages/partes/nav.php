@@ -49,8 +49,10 @@
             <div class="xp-breadcrumbbar text-center">
                 <h4 class="page-title">Bienvenido</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../pages/index.php"> <?php echo $_SESSION['DBnombre']." ". $_SESSION['DBapellido'];?> </a></li>
-                    <li class="breadcrumb-item active" aria-curent="page"> <?php echo $_SESSION['rol'];?> </li>
+                <?php include("../pages/datos_actualizados.php");
+                        $datoss = obtenerDatos2();?>
+                    <li class="breadcrumb-item"><a href="../pages/index.php"> <?php  echo $datoss["Nnom"]." ". $datos["Nape"];?> </a></li>
+                    <li class="breadcrumb-item active" aria-curent="page"> <?php echo $datos["Nrol"];?> </li>
                 </ol>
             </div>
         </div>

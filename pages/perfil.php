@@ -18,6 +18,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         <?php include("../pages/partes/nav.php");?>
     <!--***************************************************************-->
     <div class="main-content">
+       
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -27,6 +28,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">
+                                <?php include("../pages/datos_actualizados.php");
+                                $datos = obtenerDatos();?>
                             
                                 <form role="form" method="post" id="formito">
                                 <input type="hidden" name="id" value="<?php echo $_SESSION['DBid']; ?>">
@@ -38,24 +41,24 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                             
                                         
                                             <label><b>Nombres</b></label>
-                                            <input class="form-control" type="text" name="Nnom" id="Nnom"readonly value="<?php echo $_SESSION['DBnombre'];?>">
+                                            <input class="form-control" type="text" name="Nnom" id="Nnom"readonly value="<?php echo $datos["Nnom"];?>">
                                         </div>
 
                                         <div class="form-group">
                                             <label><b>Apellidos</b></label>
-                                            <input class="form-control" type="text" name="Nape" id="Nape"readonly value="<?php echo $_SESSION['DBapellido'];?>" >
+                                            <input class="form-control" type="text" name="Nape" id="Nape"readonly value="<?php echo $datos["Nape"];?>" >
                                         </div>
 
                                         <div class="form-group">
                                             <label><b>Nombre de usuario</b></label>
-                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu"readonly value="<?php echo $_SESSION['DBusu'];?>">
+                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu"readonly value="<?php echo $datos["Nnom_usu"];?>">
                                         </div>
 
                                 
 
                                         <div class="form-group">
                                             <label><b>Rol</b></label>
-                                            <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $_SESSION['rol'];?>">
+                                            <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="<?php echo $datos["Nrol"];?>">
                                         </div>
 
                                       
@@ -84,22 +87,22 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <input type="hidden" name="id" value="<?php echo $_SESSION['DBid']; ?>">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
-                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nnom" id="NnomE" value="<?php echo $_SESSION['DBnombre'];?>" >
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nnom" id="NnomE" value="<?php echo $datos["Nnom"];?>" >
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Apellidos</label>
-                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nape" id="NapeE" value="<?php echo $_SESSION['DBapellido'];?>">
+                                                            <input class="form-control" onkeypress="return validarSOLOletras(event)" type="text" name="Nape" id="NapeE" value="<?php echo $datos["Nape"];?>">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Nombre de usuario</label>
-                                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usuE" value="<?php echo $_SESSION['DBusu'];?>">
+                                                            <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usuE" value="<?php echo $datos["Nnom_usu"];?>">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Rol</label>
-                                                                <input class="form-control" type="text" name="Nrol" id="NrolE"readonly value="<?php echo $_SESSION['rol'];?>">
+                                                                <input class="form-control" type="text" name="Nrol" id="NrolE"readonly value="<?php echo $datos["Nrol"];?>">
 
                                                         </div>
                                                         <button type="submit" id="actualizadatos" on class="btn btn-success"><i class="fa fa-paper-plane"></i>Actualizar</button>
