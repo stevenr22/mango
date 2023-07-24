@@ -1,7 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['DBid'])==false) header("location:../index.php");
-?>
+
 <?php
 // Paso 1: Establecer la conexión a la base de datos
 include("../conexion.php");
