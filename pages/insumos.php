@@ -69,12 +69,12 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Fecha de aplicación: </b></label>
-                                                        <input class="form-control" type="date" name="fech_apli" placeholder="Ingrese una breve descripción">
+                                                        <input class="form-control" type="date" name="fech_apli">
                                                     </div>
                                                 </div>
                                             </div>
                                            
-                                            <button type="submit" class="btn btn-success"> <i class="fa fa-paper-plane"></i> Guardar</button>
+                                            <button type="submit" name="btn_guardar_insecticidas" class="btn btn-success"> <i class="fa fa-paper-plane"></i> Guardar</button>
                                                             
                                         </form>
                                     </div>
@@ -85,6 +85,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                     </div>
                 </div>
                 <!--MODAL Insecticidas-->
+
                 
 
 
@@ -99,7 +100,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form role="form" method="post" action="">
+                                        <form role="form" method="post" action="guardar_maquinaria.php">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -126,6 +127,12 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                         <input class="form-control" type="text" name="descri_maqui" placeholder="Ingrese una breve descripción">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label><b>Fecha de uso: </b></label>
+                                                        <input class="form-control" type="date" name="fech_maqui">
+                                                    </div>
+                                                </div>
                                             </div>
                                            
                                            
@@ -150,7 +157,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form role="form" method="post" action="">
+                                        <form role="form" method="post" action="registrar_parcela.php">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">

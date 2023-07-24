@@ -1,14 +1,15 @@
 <?php
 include("../conexion.php");
-$nombre = $_POST["nomb_insec"];
-$cantidad = $_POST["canti_insec"];
-$descri =$_POST["descri_insec"];
-$tipo = $_POST["tipo_insec"];
+$nombre = $_POST["nombre_parcela"];
+$fech = $_POST["fech_parcela"];
+$alt = $_POST["alto_parcela"];
+$anch =$_POST["ancho_parcela"];
 
-$fech_apli = $_POST["fech_apli"];
 
-$sql = "INSERT INTO materiales (nombre_mat,cantidad_mat,descri_mat,tipo_mat,fecha_mat) 
-        VALUES ('$nombre','$cantidad','$descri','$tipo','$fech_apli')";
+
+
+$sql = "INSERT INTO parcelas (fecha_parcela,nombre_parcela,alto,ancho) 
+        VALUES ('$fech','$nombre','$alt','$anch')";
 $respues = mysqli_query($conn,$sql);
 
 if($respues){

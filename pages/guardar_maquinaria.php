@@ -1,11 +1,10 @@
 <?php
 include("../conexion.php");
-$nombre = $_POST["nomb_insec"];
-$cantidad = $_POST["canti_insec"];
-$descri =$_POST["descri_insec"];
-$tipo = $_POST["tipo_insec"];
-
-$fech_apli = $_POST["fech_apli"];
+$nombre = $_POST["nombre_maqui"];
+$cantidad = $_POST["cant_maqui"];
+$descri =$_POST["tipo_maqui"];
+$tipo = $_POST["descri_maqui"];
+$fech_apli = $_POST["fech_maqui"];
 
 $sql = "INSERT INTO materiales (nombre_mat,cantidad_mat,descri_mat,tipo_mat,fecha_mat) 
         VALUES ('$nombre','$cantidad','$descri','$tipo','$fech_apli')";
