@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+?>
+<?php
 include("../conexion.php");
 $nombre = $_POST["nomb_insec"];
 $cantidad = $_POST["canti_insec"];

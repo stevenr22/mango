@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+?>
+<?php
 // Paso 1: Establecer la conexión a la base de datos
 include("../conexion.php");
 
@@ -23,7 +27,7 @@ if (isset($_POST['id']) && isset($_POST['Nnom']) && isset($_POST['Nape'])&& isse
             icon: 'success'
         }).then(function() {
         // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
-        window.location.href = "../pages/perfil.php";
+        window.location.href = "perfil.php";
         });
         </script>
             

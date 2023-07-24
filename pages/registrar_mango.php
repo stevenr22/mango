@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+?>
+<?php
 include("../conexion.php");
 $var = $_POST["variedad_mango"];
 $pes = $_POST["peso_mango"];
