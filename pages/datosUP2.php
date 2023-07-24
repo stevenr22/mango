@@ -1,5 +1,5 @@
-<?php 
-        function obtenerDatos(){
+<?php
+   function obtenerDatos2(){
             include("../conexion.php");
             $id = $_SESSION['DBid'];
             $sql = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol 
@@ -8,12 +8,10 @@
             $result = $conn->query($sql);
             $dato = array();
             if ($result->num_rows > 0) {
-                $fila = $result->fetch_assoc();
-                $dato["Nnom"] = $fila["nombre"];
-                $dato["Nape"] = $fila["apellido"];
-                $dato["Nnom_usu"] = $fila["nomb_usuario"];
-                $dato["Nrol"] = $fila["Nombre_rol"];
-
+                $filas = $result->fetch_assoc();
+                //nav
+                $dato["nombre"] = $filas["nombre"]." ".$filas["apellido"];
+                $dato["rol"] = $filas["Nombre_rol"];
                 
                
 
@@ -26,7 +24,4 @@
         
             return $dato;
         }
-
-
-       
 ?>

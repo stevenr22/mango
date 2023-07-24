@@ -49,10 +49,10 @@
             <div class="xp-breadcrumbbar text-center">
                 <h4 class="page-title">Bienvenido</h4>
                 <ol class="breadcrumb">
-                <?php include("../pages/datos_actualizados.php");
-                        $datoss = obtenerDatos2();?>
-                    <li class="breadcrumb-item"><a href="../pages/index.php"> <?php  echo $datoss["Nnom"]." ". $datos["Nape"];?> </a></li>
-                    <li class="breadcrumb-item active" aria-curent="page"> <?php echo $datos["Nrol"];?> </li>
+                <?php include("../pages/datosUP2.php");
+                    $datoss = obtenerDatos2();?>
+                    <li class="breadcrumb-item" name="nombre"><a href="../pages/index.php"> <?php  echo $datoss["nombre"];?> </a></li>
+                    <li class="breadcrumb-item active" aria-curent="page" name="rol"></li> <?php echo $datoss["rol"];?> </li>
                 </ol>
             </div>
         </div>
