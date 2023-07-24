@@ -84,7 +84,7 @@ if (isset($_SESSION['DBid']) == false) header("location:../index.php");
 
 
 
-                            <table class="table table-striped table-bordered table-hover" style="border-radius: 5px;" id="dataTables-example">
+                            <table class="table table-striped table-bordered table-hover" style="border-radius: 5px;"  id="dataTables-example">
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>Pais</b></th>
@@ -286,6 +286,10 @@ if (isset($_SESSION['DBid']) == false) header("location:../index.php");
                 });
 
             });
+
+
+            
+          
         </script>
 
 

@@ -23,93 +23,32 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         <div id="content">
             <?php include("../pages/partes/nav.php");?>
             <div class="main-content">
-            <div class="row">
-                <!---PRIMERA COLUMNA GRAFICO DE BARRAS-->
-                <div class="col-md-6">
-                       <div class="card">
-                        <div class="card-header">Recursos utilizados</div>
-
-                        <div class="card-body">
-                            <canvas id="myChart"></canvas>
-
-                            <script>
-                            // Paso 2: Crea un contexto de lienzo utilizando el ID del elemento canvas
-                            var ctx = document.getElementById('myChart').getContext('2d');
-
-                            // Paso 3: Define los datos para tu gráfico
-                            var data = {
-                                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-                                datasets: [{
-                                label: 'Ventas',
-                                data: [120, 150, 180, 90, 200],
-                                backgroundColor: '#a2231d',
-                                borderColor: '#a2231d',
-                                borderWidth: 1
-                                }]
-                            };
-
-                            // Paso 4: Configura y dibuja el gráfico
-                            var myChart = new Chart(ctx, {
-                                type: 'bar', // Tipo de gráfico (barra en este caso)
-                                data: data,
-                                options: {
-                                responsive: true, // Hacer el gráfico responsive
-                                scales: {
-                                    y: {
-                                    beginAtZero: true
-                                    }
-                                }
-                                }
-                            });
-                            </script>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                                Producción de mango
+                            </div>
+                            <div class="card-body">
+                                <canvas class="chart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                                Recursos utilizados
+                            </div>
+                            <div class="card-body">
+                                <canvas class="chart" width="400" height="200"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!---SEGUNDA COLUMNA GRAFICO DE PASTEL-->
-                <div class="col-md-6">
-                       <div class="card">
-                        <div class="card-header">Producción</div>
-
-                        <div class="card-body">
-                            <canvas id="myChart2"></canvas>
-
-                            <script>
-                            // Paso 2: Crea un contexto de lienzo utilizando el ID del elemento canvas
-                            var ctx = document.getElementById('myChart2').getContext('2d');
-
-                            // Paso 3: Define los datos para tu gráfico
-                            var data = {
-                                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-                                datasets: [{
-                                label: 'Ventas',
-                                data: [120, 150, 180, 90, 200],
-                                backgroundColor: '#a2231d',
-                                borderColor: 'white',
-                                borderWidth: 1
-                                }]
-                            };
-
-                            // Paso 4: Configura y dibuja el gráfico
-                            var myChart = new Chart(ctx, {
-                                type: 'pie', // Tipo de gráfico (barra en este caso)
-                                data: data,
-                                options: {
-                                responsive: true, // Hacer el gráfico responsive
-                                scales: {
-                                    y: {
-                                    beginAtZero: true
-                                    }
-                                }
-                                }
-                            });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-               
-
+   
             </div>
-            
         </div>
     </div>
     <script type="text/javascript">
@@ -124,6 +63,49 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
            });
            
         });
+
+
+        const charts = document.querySelectorAll(".chart");
+        charts.forEach(function (chart) {
+        var ctx = chart.getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [
+                {
+                label: "# of Votes",
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                ],
+                borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(153, 102, 255, 1)",
+                    "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+                },
+            ],
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true,
+                },
+            },
+            },
+        });
+        });
+
    </script>
 </body>
 </html>
