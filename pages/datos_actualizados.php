@@ -1,5 +1,6 @@
 
 <?php 
+
         function obtenerDatos(){
             include("../conexion.php");
             $id = $_SESSION['DBid'];

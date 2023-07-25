@@ -1,5 +1,6 @@
 
 <?php
+
 // Paso 1: Establecer la conexión a la base de datos
 include("../conexion.php");
 

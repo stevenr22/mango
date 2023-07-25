@@ -113,18 +113,25 @@ if($_SESSION['idrol']==2){
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    include("../conexion.php");
+                                    $sql = "SELECT id_mat,nombre_mat,tipo_mat,descri_mat,cantidad_mat,fecha_mat FROM materiales";
+                                    $res = $conn->query($sql);
+                                    while ($arreglo = $res->fetch_array()) {
+                                    ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Podadora industrial</td>
-                                        <td>Vehiculo</td>
-                                        <td>Permitir la poda de malesa del area donde se siembra la semilla</td>
-                                        <td>3</td>
-                                        <td>2023-02-12</td>
+                                        <td><?php echo $arreglo['id_mat'] ?></td>
+                                        <td><?php echo $arreglo['nombre_mat'] ?></td>
+                                        <td><?php echo $arreglo['tipo_mat'] ?></td>
+                                        <td><?php echo $arreglo['descri_mat'] ?></td>
+                                        <td><?php echo $arreglo['cantidad_mat'] ?></td>
+                                        <td><?php echo $arreglo['fecha_mat'] ?></td>
                                             <td class="center">
                                                 <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">download</i>Descargar</button>
                                                 <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
                                             </td>
                                         </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>
