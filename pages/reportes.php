@@ -39,7 +39,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover" id="produccion">
+                            <table class="table table-striped table-bordered table-hover produccion" >
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>ID</b></th>
@@ -49,12 +49,7 @@ if($_SESSION['idrol']==2){
                                         <th><b>Actividad realizada</b></th>
                                         <th><b>Observaciones</b></th>
                                         <th><b>Fecha de la cosecha</b></th>
-
                                         <th><b>Reporte</b></th>
-
-                                  
-
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,8 +62,8 @@ if($_SESSION['idrol']==2){
                                         <td>Ninguna novedad</td>
                                         <td>2023-02-12</td>
                                             <td class="center">
-                                                <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">download</i>Descargar</button>
-                                                <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
+                                                <button type="button" class="btn btn-success"><i  class="material-icons">download</i>Descargar</button>
+                                                <button type="button" class="btn btn-danger"> <i  class="material-icons">delete</i>Eliminar</button>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -122,8 +117,8 @@ if($_SESSION['idrol']==2){
                                         <td><?php echo $arreglo['cantidad_mat'] ?></td>
                                         <td><?php echo $arreglo['fecha_mat'] ?></td>
                                             <td class="center">
-                                                <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">download</i>Descargar</button>
-                                                <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
+                                                <button type="button" class="btn btn-success"  ><i  class="material-icons">download</i>Descargar</button>
+                                                <button type="button" class="btn btn-danger" > <i  class="material-icons">delete</i>Eliminar</button>
                                             </td>
                                         </tr>
                                 <?php } ?>
@@ -158,10 +153,43 @@ if($_SESSION['idrol']==2){
         });
 
 
+        $('.produccion').DataTable({
+                "language": {
+                    "processing": "Procesando...",
+                    "lengthMenu": "Mostrar MENU registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "emptyTable": "Ningún dato disponible en esta tabla",
+                    "info": "Mostrando registros del START al END de un total de TOTAL registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de MAX registros)",
+                    "search": "Buscar:",
+                    "infoThousands": ",",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                },
+                "dom": 'Bfrtip<"col-md-6 inline"> <"col-md-6 inline">',
+                "buttons": [
+                    { extend: 'copyHtml5', id: 'cd', className: 'btn btn-primary', text: '<i class="bi bi-clipboard"></i> Copy' },
+                    //'spacer',
+                    { extend: 'csv', className: 'btn btn-csv', text: '<i class="bi bi-file-earmark-spreadsheet"></i> CSV' },
+                    //'spacer',
+                    { extend: 'excel', className: 'btn btn-excel', text: '<i class="bi bi-file-earmark-excel"></i> Excel' },
+                    //'spacer',
+                    { extend: 'pdf', className: 'btn btn-danger', text: '<i class="bi bi-file-earmark-pdf"></i> PDF' },
+                    //'spacer',
+                    { extend: 'print', className: 'btn btn-print', text: '<i class="bi bi-printer"></i> Imprimir' },
 
+                ]
 
-     
+            });
+
    </script>
+ 
 
 
 
