@@ -62,7 +62,10 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
                 Swal.fire({
                 title: "DATOS REGISTRADOS CORRECTAMENTE!",
                 icon: 'success'
-            })
+            }).then(function() {
+                // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+                window.location.href = "../pages/login.html";
+                });
             </script>
                 
             <?php
