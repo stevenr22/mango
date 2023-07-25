@@ -37,8 +37,10 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
+     
+
                                                         <label><b>Cantidad: </b></label>
-                                                        <input class="form-control" type="number" name="canti_insec" placeholder="Ingrese la cantidad" required>
+                                                        <input class="form-control" type="text"  id="cantiinsec" name="cantiinsec" oninput="limitarNumeros(event, 2)"  placeholder="Ingrese la cantidad" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -130,7 +132,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Cantidad: </b></label>
-                                                        <input class="form-control" type="number" name="cant_maqui" placeholder="Ingrese la cantidad" required>
+                                                        <input class="form-control" type="text" name="cant_maqui" oninput="limitarNumeros(event, 2)" placeholder="Ingrese la cantidad" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -193,13 +195,13 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Alto: </b></label>
-                                                        <input class="form-control" type="number" name="alto_parcela" placeholder="Ingrese el alto" required>
+                                                        <input class="form-control" type="number" name="alto_parcela" oninput="limitarNumeros(event, 3)" placeholder="Ingrese el alto" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Ancho: </b></label>
-                                                        <input class="form-control" type="number" name="ancho_parcela" placeholder="Ingrese ancho" required>
+                                                        <input class="form-control" type="number" name="ancho_parcela" oninput="limitarNumeros(event, 3)" placeholder="Ingrese ancho" required>
                                                     </div>
                                                 </div>
                                                
@@ -257,13 +259,13 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Peso: </b></label>
-                                                        <input class="form-control" type="number" name="peso_mango" placeholder="Ingrese el peso" required>
+                                                        <input class="form-control" type="number" name="peso_mango" oninput="limitarNumeros(event, 2)" placeholder="Ingrese el peso" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label><b>Cantidad: </b></label>
-                                                        <input class="form-control" type="number" name="cantidad_mango" placeholder="Ingrese la cantidad" required>
+                                                        <input class="form-control" type="number" name="cantidad_mango" oninput="limitarNumeros(event, 3)" placeholder="Ingrese la cantidad" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -331,6 +333,17 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             inputPersonalizado.style.display = "none";
             }
         }
+
+
+        function limitarNumeros(event, maxCaracteres) {
+            var inputVal = event.target.value;
+            // Elimina cualquier caracter no numérico
+            inputVal = inputVal.replace(/\D/g, '');
+            // Limita la cantidad de caracteres al máximo
+            inputVal = inputVal.slice(0, maxCaracteres);
+            event.target.value = inputVal;
+        }
+        
   
 
 

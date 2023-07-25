@@ -62,8 +62,7 @@ if($_SESSION['idrol']==2){
                                         <td>Ninguna novedad</td>
                                         <td>2023-02-12</td>
                                             <td class="center">
-                                                <button type="button" class="btn btn-success"><i  class="material-icons">download</i>Descargar</button>
-                                                <button type="button" class="btn btn-danger"> <i  class="material-icons">delete</i>Eliminar</button>
+                                                <button type="button" class="btn btn-warning"> <i  class="material-icons">delete</i>Eliminar</button>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -117,8 +116,7 @@ if($_SESSION['idrol']==2){
                                         <td><?php echo $arreglo['cantidad_mat'] ?></td>
                                         <td><?php echo $arreglo['fecha_mat'] ?></td>
                                             <td class="center">
-                                                <button type="button" class="btn btn-success"  ><i  class="material-icons">download</i>Descargar</button>
-                                                <button type="button" class="btn btn-danger" > <i  class="material-icons">delete</i>Eliminar</button>
+                                                <button type="button" class="btn btn-warning" > <i  class="material-icons">delete</i>Eliminar</button>
                                             </td>
                                         </tr>
                                 <?php } ?>

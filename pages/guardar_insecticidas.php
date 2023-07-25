@@ -3,7 +3,7 @@
 
 include("../conexion.php");
 $nombre = $_POST["nomb_insec"];
-$cantidad = $_POST["canti_insec"];
+$cantidad = $_POST["cantiinsec"];
 $descri =$_POST["descri_insec"];
 $tipo = $_POST["tipo_insec"];
 
