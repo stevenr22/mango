@@ -52,22 +52,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
  
 
-    <!--SCRIPTS-->
- <!--    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../vendor/bootstrap/js/popper.min.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-
-
-    <script src="../js/jquery-3.3.1.min.js"></script>
-
-
-    <script src="../js/jquery.dataTables.min.js"></script>
-    <script src="../js/dataTables.bootstrap.min.js"></script>
-    
-
-	<link rel="stylesheet" type="text/css" href="../css/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css"> -->
-
 
     
  

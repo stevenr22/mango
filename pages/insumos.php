@@ -55,16 +55,34 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
+                                                    <?php
+                                                    include("../conexion.php");
+                                                    // Consulta para obtener los nombres de la tabla "usuarios"
+                                                    $sql = "SELECT nombre_parcela FROM parcelas";
+                                                    $result = $conn->query($sql);
+
+                                                    // Verificar si hay resultados y almacenarlos en un arreglo
+                                                    $nombres_parcelas = array();
+                                                    if ($result->num_rows > 0) {
+                                                        while ($row = $result->fetch_assoc()) {
+                                                            $nombres_parcelas[] = $row["nombre_parcela"];
+                                                        }
+                                                    }
+                                                    ?>
+                                                        
+                                                        
                                                         
                                                         <label><b>Elegir la parcela aplicar: </b></label>
                                                         <select class="form-control chzn-select" id="parcela" name="parcela" required>
-                                                            <option value="1">Primera parcela</option>
-                                                            <option value="2">Segunda parcela</option>
-                                                            <option value="3">Tercera parcela</option>
-                                                            <option value="4">Cuarta parcela</option>
-                                                            <option value="5">Quinta parcela</option>
+                                                        <?php
+                                                        // Generar opciones del select utilizando los nombres obtenidos de la base de datos
+                                                        foreach ($nombres_parcelas as $nombre) {
+                                                            echo "<option value='$nombre'>$nombre</option>";
+                                                        }
+                                                        ?>
                                                         </select>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">

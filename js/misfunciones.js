@@ -28,15 +28,3 @@ function actualizaDatos(){
 	});
 
 }
-/*
-
-function mostrarInputPersonalizado() {
-	var select = document.getElementById("tip_mango");
-	var inputPersonalizado = document.getElementById("campoPersonalizado");
-
-	if (select.value === "personalizado") {
-		inputPersonalizado.style.display = "block";
-	} else {
-		inputPersonalizado.style.display = "none";
-	}
-}*/

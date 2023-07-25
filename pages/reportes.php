@@ -13,7 +13,8 @@ if($_SESSION['idrol']==2){
 <head>
 
     <?php include("partes/enlaces.php");?>
-    <link rel="stylesheet" href="../css/misestilos.css">
+ 
+  
 
     <title>Reportes</title>
 </head>
@@ -38,7 +39,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table class="table table-striped table-bordered table-hover" id="produccion">
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>ID</b></th>
@@ -94,7 +95,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table class="table table-striped table-bordered table-hover" id="RecursosReporte">
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>Id</b></th>
@@ -103,13 +104,7 @@ if($_SESSION['idrol']==2){
                                         <th><b>Descripcion</b></th>
                                         <th><b>Unidades utilizadas</b></th>
                                         <th><b>Fecha</b></th>
-                                       
-
                                         <th><b>Reporte</b></th>
-
-                                  
-
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -148,6 +143,7 @@ if($_SESSION['idrol']==2){
         </div>
       
     </div>
+
     <script type="text/javascript">
         $(document).ready(function(){
            $(".xp-menubar").on('click',function(){
@@ -160,6 +156,14 @@ if($_SESSION['idrol']==2){
            });
            
         });
+
+
+
+
+     
    </script>
+
+
+
 </body>
 </html>
