@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['DBid']) == false) header("location:../index.php");
-if($_SESSION['idrol']==2){
-    $_SESSION['MensajeError']="No tienes permisos necesarios para acceder a esta dirección!";
+if ($_SESSION['idrol'] == 2) {
+    $_SESSION['MensajeError'] = "No tienes permisos necesarios para acceder a esta dirección!";
     header("location:../pages/index.php");
 }
 ?>
@@ -39,7 +39,7 @@ if($_SESSION['idrol']==2){
 
 
 
-                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <table class="table table-striped table-bordered table-hover datatable-export" >
                             <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                 <tr>
                                     <th><b>ID</b></th>
@@ -133,104 +133,90 @@ if($_SESSION['idrol']==2){
             </div>
         </div>
 
+    <?php include("partes/scripts.php"); ?>
+    <script type="text/javascript">
+        function UpdateRol() {
+            let id_emp = $("#id_Emp").val();
+            let id_rol = $("#rol option:selected").val();
 
-        <script type="text/javascript">
-             $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
-            function UpdateRol() {
-                let id_emp = $("#id_Emp").val();
-                let id_rol = $("#rol option:selected").val();
+            // Verificar si los IDs están presentes
+            if (id_emp && id_rol) {
+                // Objeto con los datos a enviar
+                let data = {
+                    id_emp: id_emp,
+                    id_rol: id_rol
+                };
 
-                // Verificar si los IDs están presentes
-                if (id_emp && id_rol) {
-                    // Objeto con los datos a enviar
-                    let data = {
-                        id_emp: id_emp,
-                        id_rol: id_rol
-                    };
-
-                    // Realizar la solicitud AJAX
-                    $.ajax({
-                        url: 'SetRol.php',
-                        method: 'POST',
-                        data: data,
-                        dataType: 'json',
-                        success: function(response) {
-                            // Verificar si la actualización se realizó correctamente
-                            if (response.success) {
-                                swal.fire("Transacción exitosa", response.message, "success").then((result) => {
-                                    /* Read more about isConfirmed, isDenied below */
-                                    location.reload();
-                                });
-                            } else {
-                                swal.fire("Error", "Error: " + response.message, "error");
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error:', error);
+                // Realizar la solicitud AJAX
+                $.ajax({
+                    url: 'SetRol.php',
+                    method: 'POST',
+                    data: data,
+                    dataType: 'json',
+                    success: function(response) {
+                        // Verificar si la actualización se realizó correctamente
+                        if (response.success) {
+                            swal.fire("Transacción exitosa", response.message, "success").then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                location.reload();
+                            });
+                        } else {
+                            swal.fire("Error", "Error: " + response.message, "error");
                         }
-                    });
-                } else {
-                    swal.fire("Advertencia", "Debe seleccionar un empleado y un rol.", "warning");
-                }
-            }
-
-            function modalcito_seesconde() {
-                $("#modalcito").modal("hide");
-            }
-
-            function cargarRoles(id) {
-                // Realizar la solicitud GET a GetRoles.php
-                fetch('GetRoles.php')
-                    .then(response => response.json())
-                    .then(data => {
-                        // Obtener la referencia al select
-                        var select = document.getElementById('rol');
-
-                        // Vaciar el contenido actual del select
-                        select.innerHTML = '';
-
-                        // Recorrer los datos y crear las opciones del select
-                        data.forEach(rol => {
-                            var option = document.createElement('option');
-                            option.value = rol.Id_rol;
-                            option.text = rol.Nombre_rol;
-
-                            // Establecer el valor seleccionado (por ejemplo, si Id_rol es 2)
-                            if (rol.Id_rol === id) {
-                                option.selected = true;
-                            }
-
-                            select.appendChild(option);
-                        });
-                    })
-                    .catch(error => {
+                    },
+                    error: function(xhr, status, error) {
                         console.error('Error:', error);
+                    }
+                });
+            } else {
+                swal.fire("Advertencia", "Debe seleccionar un empleado y un rol.", "warning");
+            }
+        }
+
+        function modalcito_seesconde() {
+            $("#modalcito").modal("hide");
+        }
+
+        function cargarRoles(id) {
+            // Realizar la solicitud GET a GetRoles.php
+            fetch('GetRoles.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Obtener la referencia al select
+                    var select = document.getElementById('rol');
+
+                    // Vaciar el contenido actual del select
+                    select.innerHTML = '';
+
+                    // Recorrer los datos y crear las opciones del select
+                    data.forEach(rol => {
+                        var option = document.createElement('option');
+                        option.value = rol.Id_rol;
+                        option.text = rol.Nombre_rol;
+
+                        // Establecer el valor seleccionado (por ejemplo, si Id_rol es 2)
+                        if (rol.Id_rol === id) {
+                            option.selected = true;
+                        }
+
+                        select.appendChild(option);
                     });
-            }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
 
-            function modalcito_aparece(id, nom, ape, nom_usu, rol, idRol) {
-                $("#modalcito").modal("show");
-                $("#id_Emp").val(id);
-                $("#Nnom").val(nom);
-                $("#Nape").val(ape);
-                $("#Nnom_usu").val(nom_usu);
-                cargarRoles(idRol)
-                //$("#rol option:selected").val(idRol);
-            }
-        </script>
-
-
-
+        function modalcito_aparece(id, nom, ape, nom_usu, rol, idRol) {
+            $("#modalcito").modal("show");
+            $("#id_Emp").val(id);
+            $("#Nnom").val(nom);
+            $("#Nape").val(ape);
+            $("#Nnom_usu").val(nom_usu);
+            cargarRoles(idRol)
+            //$("#rol option:selected").val(idRol);
+        }
+    </script>
 </body>
 
 </html>

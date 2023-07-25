@@ -40,7 +40,7 @@ if($_SESSION['idrol']==2){
                                     
                     </div>
 				</div>
-                <table class="table table-striped table-bordered table-hover"  id="dataTables-example">
+                <table class="table table-striped table-bordered table-hover datatable-export">
                     <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                         <tr>
                                        
@@ -160,25 +160,6 @@ if($_SESSION['idrol']==2){
     <!--***************************************************************-->
     </div>
     
-    <script type="text/javascript">
-        $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
-
-
-           
-   </script>
-
-
-
-    
+    <?php include("partes/scripts.php"); ?>
 </body>
 </html>

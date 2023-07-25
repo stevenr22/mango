@@ -318,21 +318,9 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         </div>
 
     </div>
+    <?php include("partes/scripts.php"); ?>
     <script src="../js/misfunciones.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
-
-
         function mostrarInputPersonalizado() {
             var select = document.getElementById("estadoMango");
             var inputPersonalizado = document.getElementById("campoPersonalizado");

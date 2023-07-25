@@ -1,4 +1,38 @@
+<style>
+     .dataTables_wrapper .btn-csv {
+            background-color: #e86c3a;
+            border-color: #e86c3a;
+            color: #fff;
+        }
 
+        .dataTables_wrapper .btn-csv:hover {
+            background-color: #C45C32;
+            border-color: #C45C32;
+            color: #fff;
+        }
+        .dataTables_wrapper .btn-print {
+            background-color: #8766b1;
+            border-color: #8766b1;
+            color: #fff;
+        }
+
+        .dataTables_wrapper .btn-print:hover {
+            background-color: #715693;
+            border-color: #715693;
+            color: #fff;
+        }
+        .dataTables_wrapper .btn-excel {
+            background-color: #3ca23c;
+            border-color: #3ca23c;
+            color: #fff;
+        }
+
+        .dataTables_wrapper .btn-excel:hover {
+             background-color: #338E33;
+            border-color: #338E33;
+            color: #fff;
+        }
+</style>
 <div class="top-navbar">
         <div class="xd-topbar">
             <div class="row">

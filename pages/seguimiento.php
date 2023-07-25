@@ -51,20 +51,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             </div>
         </div>
     </div>
+    <?php include("partes/scripts.php"); ?>
     <script type="text/javascript">
-        $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
-
-
         const charts = document.querySelectorAll(".chart");
         charts.forEach(function (chart) {
         var ctx = chart.getContext("2d");

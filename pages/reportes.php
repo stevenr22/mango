@@ -39,7 +39,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover produccion" >
+                            <table class="table table-striped table-bordered table-hover datatable-export" >
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>ID</b></th>
@@ -90,7 +90,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover" id="RecursosReporte">
+                            <table class="table table-striped table-bordered table-hover datatable-export" id="RecursosReporte">
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>Id</b></th>
@@ -138,60 +138,6 @@ if($_SESSION['idrol']==2){
         </div>
       
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
-
-
-        $('.produccion').DataTable({
-                "language": {
-                    "processing": "Procesando...",
-                    "lengthMenu": "Mostrar MENU registros",
-                    "zeroRecords": "No se encontraron resultados",
-                    "emptyTable": "Ningún dato disponible en esta tabla",
-                    "info": "Mostrando registros del START al END de un total de TOTAL registros",
-                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                    "infoFiltered": "(filtrado de un total de MAX registros)",
-                    "search": "Buscar:",
-                    "infoThousands": ",",
-                    "loadingRecords": "Cargando...",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Último",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
-                },
-                "dom": 'Bfrtip<"col-md-6 inline"> <"col-md-6 inline">',
-                "buttons": [
-                    { extend: 'copyHtml5', id: 'cd', className: 'btn btn-primary', text: '<i class="bi bi-clipboard"></i> Copy' },
-                    //'spacer',
-                    { extend: 'csv', className: 'btn btn-csv', text: '<i class="bi bi-file-earmark-spreadsheet"></i> CSV' },
-                    //'spacer',
-                    { extend: 'excel', className: 'btn btn-excel', text: '<i class="bi bi-file-earmark-excel"></i> Excel' },
-                    //'spacer',
-                    { extend: 'pdf', className: 'btn btn-danger', text: '<i class="bi bi-file-earmark-pdf"></i> PDF' },
-                    //'spacer',
-                    { extend: 'print', className: 'btn btn-print', text: '<i class="bi bi-printer"></i> Imprimir' },
-
-                ]
-
-            });
-
-   </script>
- 
-
-
-
+    <?php include("partes/scripts.php"); ?>
 </body>
 </html>
