@@ -112,7 +112,7 @@ if($_SESSION['idrol']==2){
                                                     
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover datatable-export" id="RecursosReporte">
+                            <table class="table table-striped table-bordered table-hover datatable-export2" id="RecursosReporte">
                                 <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                     <tr>
                                         <th><b>Id</b></th>
