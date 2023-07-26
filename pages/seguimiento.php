@@ -18,7 +18,6 @@ if ($_SESSION['idrol'] == 2) {
   
    
 
-    <link rel="stylesheet" href="../css/misestilos.css">
 
 
     <title>Seguimiento</title>
@@ -40,7 +39,7 @@ if ($_SESSION['idrol'] == 2) {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <div  id="piechart"  style="width: 900px; height: 500px;">
+                                        <div  id="piechart" >
 
                                         </div>
                                         
@@ -71,72 +70,9 @@ if ($_SESSION['idrol'] == 2) {
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-        <?php
-            include("../conexion.php");
-            $SQL = "SELECT * FROM mango";
-            $consulta = mysqli_query($conn, $SQL);
-            while ($resultado = mysqli_fetch_assoc($consulta)){
-                echo "['" .$resultado['variedad_mango']."', " .$resultado['canti_mango']."],";
-        }
-
-        ?>
-        ]);
-
-        var options = {
-          title: 'Cantidad de mangos producidos'
-          
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-
-
-
-      google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('timeofday', 'Time of Day');
-      data.addColumn('number', 'Motivation Level');
-
-      data.addRows([
-       
-      ]);
-
-      var options = {
-       
-        hAxis: {
-          title: 'Time of Day',
-          format: 'h:mm a',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          }
-        },
-        vAxis: {
-          title: 'Cantidad de recursos'
-        }
-      };
-
-      var chart = new google.visualization.ColumnChart(
-        document.getElementById('barras'));
-
-      chart.draw(data, options);
-    }
+    
 
     </script>
 
