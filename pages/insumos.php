@@ -4,6 +4,10 @@ header("Cache-Control: no-cache, must-revalidate"); // Deshabilitar el almacenam
 header("Expires: Sat, 1 Jan 2000 00:00:00 GMT"); // Expirar en una fecha pasada
 
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+if ($_SESSION['idrol'] == 1 || $_SESSION['idrol'] == 3) {
+    $_SESSION['MensajeError'] = "No tienes permisos necesarios para acceder a esta dirección!";
+    header("location:../pages/index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

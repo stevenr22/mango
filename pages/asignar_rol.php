@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['DBid']) == false) header("location:../index.php");
-if ($_SESSION['idrol'] == 2) {
+if ($_SESSION['idrol'] == 2 || $_SESSION['idrol'] == 3) {
     $_SESSION['MensajeError'] = "No tienes permisos necesarios para acceder a esta dirección!";
     header("location:../pages/index.php");
 }
