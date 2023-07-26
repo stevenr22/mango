@@ -232,8 +232,11 @@
 			"buttons": [{
 					extend: 'pdf',
 					title: 'Reporte de usuarios',
+					alignment: 'center',
+
 					className: 'btn btn-danger',
 					text: '<i class="bi bi-file-earmark-pdf"></i> PDF',
+
 					exportOptions:{
 						columns: [0,1,2,3,4]
 					},
