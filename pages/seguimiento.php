@@ -13,6 +13,8 @@ if ($_SESSION['idrol'] == 2) {
 <head>
 
     <?php include("partes/enlaces.php");?>
+    <?php include("partes/scripts.php"); ?>
+
   
    
 
@@ -30,26 +32,37 @@ if ($_SESSION['idrol'] == 2) {
             <?php include("../pages/partes/nav.php");?>
             <div class="main-content">
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                                Producción de mango
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #003400; color:white;">
+                                <b>Produccion del mango</b>
                             </div>
-                            <div class="card-body" id="piechart">
-                                
-                                
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div  id="piechart"  style="width: 900px; height: 500px;">
+
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                                Recursos utilizados
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #003400; color:white;">
+                                <b>Recursos utilziados</b>
                             </div>
-                            <div class="card-body" id="barras">
-                                
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        sfgfgdf
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,6 +94,7 @@ if ($_SESSION['idrol'] == 2) {
 
         var options = {
           title: 'Cantidad de mangos producidos'
+          
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -96,8 +110,8 @@ google.charts.setOnLoadCallback(drawBasic);
 function drawBasic() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('Cantidad');
-      data.addColumn('Mangos');
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
 
       data.addRows([
        
@@ -106,15 +120,15 @@ function drawBasic() {
       var options = {
        
         hAxis: {
-          title: 'Nombre de los recursos',
-          format: 'input',
+          title: 'Time of Day',
+          format: 'h:mm a',
           viewWindow: {
             min: [7, 30, 0],
             max: [17, 30, 0]
           }
         },
         vAxis: {
-          title: 'Cantidad de recursos utilizados'
+          title: 'Cantidad de recursos'
         }
       };
 
