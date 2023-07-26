@@ -15,7 +15,6 @@ if($_SESSION['idrol']==2){
     <title>Crear rol</title>
     
     <?php include("partes/enlaces.php");?>
-    <link rel="stylesheet" href="../css/misestilos.css">
 
 
   

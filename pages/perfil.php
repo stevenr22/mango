@@ -131,17 +131,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     </div>
     <?php include("partes/scripts.php"); ?>
     <script type="text/javascript">
-        $(document).ready(function(){
-           $(".xp-menubar").on('click',function(){
-             $("#sidebar").toggleClass('active');
-             $("#content").toggleClass('active');
-           });
-           
-           $('.xp-menubar,.body-overlay').on('click',function(){
-              $("#sidebar,.body-overlay").toggleClass('show-nav');
-           });
-           
-        });
+      
 
             function modalcito_seesconde() {
                 $("#modalcito").modal("hide");
