@@ -39,7 +39,7 @@ if ($_SESSION['idrol'] == 2) {
 
 
 
-                        <table class="table table-striped table-bordered table-hover datatable-export" >
+                        <table class="table table-striped table-bordered table-hover datatable-export3" >
                             <thead style="background-color: #a66813;border-radius: 5px;color:white;">
                                 <tr>
                                     <th><b>ID</b></th>
