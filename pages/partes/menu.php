@@ -7,6 +7,8 @@
             <a href="../pages/index.php" class="dashboard"><i class="material-icons">dashboard</i>dashboard</a>
         </li>
 
+        <?php
+            if($_SESSION['rol'] == 'Gerente' || $_SESSION['rol'] == 'Administrador'){?>
         <li class="dropdown">
             <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="material-icons">equalizer</i>Estadistica
@@ -16,7 +18,14 @@
           
             </ul>
         </li>
+        <?php
+        }
+        ?>    
 
+
+        
+        <?php
+            if($_SESSION['rol'] == 'Empleado'){?>
         <li class="dropdown">
             <a href="#homeSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="material-icons">border_color</i>Registros
@@ -26,9 +35,12 @@
                
             </ul>
         </li>
+        <?php
+        }
+        ?>   
 
         <?php
-            if($_SESSION['rol'] == 'Administrador'){?>
+            if($_SESSION['rol'] == 'Administrador'|| $_SESSION['rol'] == 'Gerente'){?>
         
                             
                             
@@ -44,7 +56,8 @@
             </li>
 
                         
-                    
+            <?php
+            if($_SESSION['rol'] == 'Administrador'){?> 
             <li class="dropdown">
                  <a href="#homeSubmenu8" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="material-icons">person</i>Usuarios
@@ -53,7 +66,10 @@
                     <li><a href="../pages/asignar_rol.php">Asignar rol</a></li>
                     <li><a href="../pages/crear_rol.php">Crear rol</a></li>
                 </ul>
-            </li>          
+            </li>   
+            <?php
+            }
+            ?>          
         <?php
         }
         ?>     
