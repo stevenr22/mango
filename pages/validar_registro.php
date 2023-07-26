@@ -21,7 +21,10 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
         Swal.fire({
         title: "CAMPOS VACIOS!",
         icon: 'warning'
-    })
+    }).then(function() {
+                // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+                window.location.href = "../pages/registro.html";
+                });
     </script>
     
     <?php
@@ -39,7 +42,10 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
             Swal.fire({
             title: "USUARIO REGISTRADO!",
             icon: 'warning'
-        })
+        }).then(function() {
+                // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+                window.location.href = "../pages/registro.html";
+                });
         </script>
             
         <?php

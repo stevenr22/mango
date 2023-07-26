@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 include("../conexion.php");
 $nombre = $_POST["nombre_parcela"];
 $fech = $_POST["fech_parcela"];

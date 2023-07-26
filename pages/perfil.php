@@ -1,6 +1,9 @@
 <?php
 session_start();
+header("Cache-Control: no-cache, must-revalidate"); // Deshabilitar el almacenamiento en caché
+header("Expires: Sat, 1 Jan 2000 00:00:00 GMT"); // Expirar en una fecha pasada
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +42,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                     <div class="form-group">
                                         <div class="form-group">
                                             
-                                        
+                                       
                                             <label><b>Nombres</b></label>
                                             <input class="form-control" type="text" name="Nnom" id="Nnom"readonly value="<?php echo $datos["Nnom"];?>">
                                         </div>
@@ -126,6 +129,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     </div>
     <!--***************************************************************-->
     </div>
+    <?php include("partes/scripts.php"); ?>
     <script type="text/javascript">
         $(document).ready(function(){
            $(".xp-menubar").on('click',function(){

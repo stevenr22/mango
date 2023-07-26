@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("../conexion.php");
 $nombre = $_POST["nomb_insec"];
 $cantidad = $_POST["cantiinsec"];
@@ -13,22 +13,14 @@ $sql = "INSERT INTO materiales (nombre_mat,cantidad_mat,descri_mat,tipo_mat,fech
 $respues = mysqli_query($conn,$sql);
 
 if($respues){
-    ?>
-    <?php
-    include("insumos.php");
-    ?>
-    <script>
-        Swal.fire({
-        title: "RECURSOS ALMACENADOS CORRECTAMENTE!",
-        icon: 'success'
-    }).then(function() {
-    // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
-    window.location.href = "../pages/insumos.php";
-    });
-    </script>
-        
-    <?php
-}else{
-    echo'error';
+   $_SESSION['MensajeExito'] = "Insecticida registrado exitosamente";
+    header("location: perfil.php");
+     exit; 
+    
+} else {
+    $_SESSION['MensajeError'] = "No se ha podido registar los datos";
+    header("location: perfil.php");
+    exit; 
 }
+
 ?>

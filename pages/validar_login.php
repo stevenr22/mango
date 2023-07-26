@@ -36,7 +36,10 @@ elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN V
         title: "CAMPOS VACIOS!",
         html: 'Rellene todos los campos!',
         icon: 'warning'
-    })
+    }).then(function() {
+                // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+                window.location.href = "../pages/login.html";
+                });
     </script>
     
     <?php
@@ -51,7 +54,10 @@ elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN V
         title: "DATOS INCORRECTOS!",
         html: 'El usuario o contraseña no son correctos, intente nuevamente',
         icon: 'error'
-    })
+    }).then(function() {
+                // Redireccionar a otro_archivo.php después de mostrar el SweetAlert
+                window.location.href = "../pages/login.html";
+                });
     </script>
     
     <?php

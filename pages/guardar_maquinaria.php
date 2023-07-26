@@ -1,6 +1,5 @@
-
 <?php
-
+session_start();
 include("../conexion.php");
 $nombre = $_POST["nombre_maqui"];
 $cantidad = $_POST["cant_maqui"];

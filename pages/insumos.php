@@ -1,5 +1,8 @@
 <?php
 session_start();
+header("Cache-Control: no-cache, must-revalidate"); // Deshabilitar el almacenamiento en caché
+header("Expires: Sat, 1 Jan 2000 00:00:00 GMT"); // Expirar en una fecha pasada
+
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>

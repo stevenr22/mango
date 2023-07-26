@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 include("../conexion.php");
 $var = $_POST["variedad_mango"];
 $pes = $_POST["peso_mango"];
