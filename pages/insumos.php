@@ -13,7 +13,6 @@ if ($_SESSION['idrol'] == 1 || $_SESSION['idrol'] == 3) {
 <html lang="es">
 <head>
     <?php include("partes/enlaces.php");?>
-    
     <title>Insumos</title>
 </head>
 <body>

@@ -55,8 +55,6 @@ if($_SESSION['idrol']==2){
                                         <th><b>Fecha inicio de la cosecha</b></th>
                                         <th><b>Fecha fin de la cosecha</b></th>
                                         <th><b>Operacion</b></th>
-
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,7 +84,6 @@ if($_SESSION['idrol']==2){
                                             </td>
                                         </tr>
                                     <?php } ?>
-                                    
                                     
                                 </tbody>
                             </table>
