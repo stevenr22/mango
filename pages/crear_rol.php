@@ -62,8 +62,8 @@ if($_SESSION['idrol']==2){
                                                     <td><?php echo $arreglo['Nombre_rol'] ?></td>
                                                     <td><?php echo $arreglo['Descripcion'] ?></td>
                                                     <td class="center">
-                                                        <button type="button" class="btn btn-success"  onclick="modalcito_aparece()"><i  class="material-icons">edit</i>Actualizar</button>
-                                                        <button type="button" class="btn btn-danger" onclick="eliminar()"> <i  class="material-icons">delete</i>Eliminar</button>
+                                                        <button type="button" class="btn btn-success"  onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')"><i  class="material-icons">edit</i>Actualizar</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>')"> <i  class="material-icons">delete</i>Eliminar</button>
                                                     </td>
                                                 </tr>
 
@@ -77,44 +77,83 @@ if($_SESSION['idrol']==2){
 
 
 
-    <div id="modalcito" class="modal" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-info">
-                    <div class="modal-title">Actualizar rol</div>
-                </div>
-                <div class="modal-body">
-                    <form role="form" method="post" action="EditRol.php" id="formito2">
-                    <input id="idRol" name="idRol" hidden>
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input class="form-control" type="text" name="nombre" id="Enombre" placeholder="Ingrese el rol">
-                        </div>
 
-                        <div class="form-group">
-                            <label>Descripción</label>
-                            <input class="form-control" type="text" name="des" id="Edes" placeholder="Ingrese la descripción">
-                        </div>
 
-                        
+    <div id="modalcito" class="modal fade" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #003400; color:white;">
+                        <div class="modal-title"><b>Actualizar rol</b></div>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" action="EditRol.php" id="formito2">
+                        <input id="idRol" name="idRol" hidden>
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input class="form-control" type="text" name="nombre" id="Enombre" placeholder="Ingrese el nombre y el apellido">
+                            </div>
 
-                        <button type="submit" class="btn btn-success" onclick="modalcito_aparece()">Guardar Registro</button>
-                        <button type="reset" class="btn btn-info">Limpiar Datos</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" CLASS="btn btn-danger" data-dismiss="modal" onclick="modalcito_seesconde()">CERRAR</button>
+                            <div class="form-group">
+                                <label>Descripción</label>
+                                <input class="form-control" type="text" name="des" id="Edes" placeholder="Ingrese cédula">
+                            </div>
+
+                            
+
+                            <button type="submit" class="btn btn-success">Guardar Registro</button>
+                            <button type="reset" class="btn btn-info">Limpiar Datos</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" CLASS="btn btn-danger" onclick="modalcito_seesconde()">CERRAR</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <script>
-         function modalcito_aparece(id, nom, des){
+        function eliminar(id, rol){
+                swal.fire({
+                    title:'Está seguro?',
+                    icon:'warning',
+                    text:'Desea eliminar el rol:'+rol,
+                    confirmButtonText:'Sí, Eliminar',
+                    showDenyButton: true,
+                    denyButtonText: `Cancelar`,
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url:'DeleteRol.php',
+                            type: 'POST',
+                            data:{id,},
+                            success: function(response){
+                                Swal.fire({
+                                    title:'Eiminado',
+                                    icon:'success',
+                                    text:'Desea eliminar el rol:'+rol,
+                                    confirmButtonText:'ok',
+                                }).then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                    
+                                    location.reload(); // Recarga la página actual
+                                    
+                                })
+                            }
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire('No se ha eliminado el rol', '', 'info')
+                    }
+                })
+            }
+        function modalcito_aparece(id, nom, des){
                 $("#modalcito").modal("show");
                 $("#Enombre").val(nom);
                 $("#idRol").val(id);
                 $("#Edes").val(des);
                 console.log($("#idRol").val())
+            }
+            function modalcito_seesconde(){
+                $("#modalcito").modal("hide");
             }
     </script>
     <!--***************************************************************-->
